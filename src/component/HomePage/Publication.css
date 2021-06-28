@@ -1,0 +1,48 @@
+.img-container{
+    position: relative;
+    width: 210px;
+    height: 150px;
+    transition: .4s all ease-in-out;
+}
+.img-front{
+    height: 210px;
+    width: 150px;
+}
+.img-wrap{
+    height: 210px;
+    width: 150px;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    z-index: -1;
+    transition: .4s all ease-in-out;
+}
+.img-back{
+    height: 210px;
+    width: 150px;
+}
+.img-container:hover .img-wrap{
+    transform: rotate(20deg) translateX(40px);
+    visibility: visible;
+    transition: .4s all ease-in-out;
+}
+
+.download-btn{
+    background-color:blue;
+    width: 200px;
+    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 0;
+    margin-top: 40px;
+    font-size: 16px;
+    padding: 3px;
+}
+
+.download-btn-fa{
+    color:white !important;
+    font-size: 16px !important;
+    border: none !important;
+    margin-right: 5px;
+    margin-left: 0px !important;
+}
