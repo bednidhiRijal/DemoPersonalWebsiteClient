@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import axios from "axios";
+import FormData from "form-data";
 
 const ContactForm = () => {
   const [fieldState, setFieldState] = useState({ fields: {}, error: {} });
@@ -30,12 +31,32 @@ const ContactForm = () => {
     console.log(error);
     return isFormValid;
   };
-  let nameField = document.getElementById("name");
-  const contactSubmitHandler = (e) => {
+  const contactSubmitHandler = async (e) => {
     e.preventDefault();
+    
     if (validationHandler()) {
+      let bodyFormData = new FormData();
+      bodyFormData.append("name",fieldState.fields.name)
+      bodyFormData.append("email",fieldState.fields.email)
+      bodyFormData.append("phone",fieldState.fields.phone)
+      bodyFormData.append("message",fieldState.fields.message)
+ 
+      await axios({
+        method: "post",
+        url: "/user",
+        data: bodyFormData,
+        headers: {"Content-Type": "multipart/form-data"},
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
       alert("submit form successfully");
+      
       //document.getElementById("contactForm").reset();
+      
       e.target.reset();
     } else {
       alert("Error on form submission");
@@ -56,23 +77,19 @@ const ContactForm = () => {
     axios
       .get("/test1/hari")
       .then(function (response) {
-        // handle success
-        console.log(response);
-        let datas = response;
-        setHttpRes({datas}) 
+        console.log(response.data);
+        setHttpRes(response.data)
       })
       .catch(function (error) {
         // handle error
         console.log(error);
-      })
-      .then(function () {
-        // always executed
       });
   }, []);
 
+
   return (
     <div>
-      <h1>here is the server response {httpRes} ......</h1>
+      <div><p>Server response</p>{httpRes.map((el,i)=>{return(<p key = {i}>age: {el.age}, name: {el.name}</p>)})}</div>
       <h1 className="contact-form-headline">Stay in touch</h1>
       <div></div>
       <Form

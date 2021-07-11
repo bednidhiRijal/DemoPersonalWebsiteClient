@@ -1,4 +1,3 @@
-
 import ImageContainer from "../ImageContainer";
 import BottomContent from "../Footer/BottomContent";
 
