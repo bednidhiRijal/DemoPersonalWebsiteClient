@@ -45,7 +45,8 @@ const ContactForm = () => {
         method: "post",
         url: "https://bed-demo-personal-web-server.herokuapp.com/user",
         data: bodyFormData,
-        headers: {"Content-Type": "multipart/form-data"},
+        headers: {"Content-Type": "multipart/form-data",
+        "Access-Control-Allow-Origin":"https://bed-demo-personal-web-server.herokuapp.com"},
       })
       .then(function (response) {
         console.log(response);
