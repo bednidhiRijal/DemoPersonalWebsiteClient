@@ -8,6 +8,7 @@ import Contact from "./component/Contact/Contact";
 import Interview from "./component/Interview/Interview";
 import Biography from "./component/Biography/Biography";
 
+
 function App() {
   return (
       <Router>

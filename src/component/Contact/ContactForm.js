@@ -43,7 +43,7 @@ const ContactForm = () => {
  
       await axios({
         method: "post",
-        url: "/user",
+        url: "https://bed-demo-personal-web-server.herokuapp.com/user",
         data: bodyFormData,
         headers: {"Content-Type": "multipart/form-data"},
       })
@@ -75,7 +75,7 @@ const ContactForm = () => {
   useEffect(() => {
     // Make a request for a user with a given ID
     axios
-      .get("/test1/hari")
+      .get("https://bed-demo-personal-web-server.herokuapp.com/test1/hari")
       .then(function (response) {
         console.log(response.data);
         setHttpRes(response.data)
