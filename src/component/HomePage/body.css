@@ -1,0 +1,16 @@
+@media only screen and (max-width: 1000px) {
+    .personal-intro{
+        width: 100%;
+        margin-bottom: 5rem;
+    }
+    .side-bar-content{
+        width: 100%;
+        height: 35rem;
+        margin-bottom: 5rem;
+        margin-top: 5rem;
+    }
+    .update{    
+        width: 100%;
+        margin-bottom: 5rem;
+    }
+}

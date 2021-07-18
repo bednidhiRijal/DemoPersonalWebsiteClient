@@ -1,3 +1,37 @@
-.d-block{
+.d-block {
+  height: 90vh;
+}
+.carousel-item-container {
+  position: relative;
+}
+
+.carousel-content-1 {
+  position: absolute;
+  width: 400px;
+  top: 25%;
+  left: 100px;
+  color: blue;
+  animation-name: movementLeftToRight;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes movementLeftToRight {
+  from {
+    left: -500px;
+  }
+  to {
+    left: 100px;
+  }
+}
+.carousel-div{
+    position: relative;
+}
+.static-image-cont{
+    position: absolute;
+    left:60%;
+    top: 0;
+}
+.static-image{
     height: 90vh;
 }

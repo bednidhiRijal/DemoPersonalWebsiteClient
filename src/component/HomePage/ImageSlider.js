@@ -3,18 +3,18 @@ import {Carousel} from "react-bootstrap"
 import "./ImageSlider.css"
 const ImageSlider = () => {
   return (
-    <div>
-      <Carousel className="carousel-cont">
-        <Carousel.Item>
+    <div className="carousel-div">
+      <Carousel>
+        <Carousel.Item className="carousel-item-container">
           <img
             className="d-block w-100"
             src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>Laptop</h3>
           </Carousel.Caption>
+          <h1 className="carousel-content-1">This web page is for educational purpose.</h1>
         </Carousel.Item>
         <Carousel.Item>
           <img
@@ -24,9 +24,9 @@ const ImageSlider = () => {
           />
 
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Space</h3>
           </Carousel.Caption>
+          <h1 className="carousel-content-1">This web page is for educational purpose.</h1>
         </Carousel.Item>
         <Carousel.Item>
           <img
@@ -34,15 +34,16 @@ const ImageSlider = () => {
             src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=753&q=80"
             alt="Third slide"
           />
-
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
+            <h3>Ocean Beach</h3>
           </Carousel.Caption>
+          <h1 className="carousel-content-1">This web page is for educational purpose.</h1>
         </Carousel.Item>
       </Carousel>
+      <div className="static-image-cont">
+      {/* http://www.baburambhattarai.com/public/assets/website/img/baburam.png */}
+        <img className="static-image" src="./Resource/ali-choubin.png"></img>
+      </div>
     </div>
   );
 };

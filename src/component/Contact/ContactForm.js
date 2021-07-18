@@ -40,13 +40,14 @@ const ContactForm = () => {
       bodyFormData.append("email",fieldState.fields.email)
       bodyFormData.append("phone",fieldState.fields.phone)
       bodyFormData.append("message",fieldState.fields.message)
- 
+      //url: "https://bed-demo-personal-web-server.herokuapp.com/user" 
+      //https://bed-demo-personal-web-server.herokuapp.com/
+      //url: "http://localhost:5000/user/contact"
       await axios({
         method: "post",
-        url: "https://bed-demo-personal-web-server.herokuapp.com/user",
+        url: "https://bed-demo-personal-web-server.herokuapp.com/user/contact",
         data: bodyFormData,
-        headers: {"Content-Type": "multipart/form-data",
-        "Access-Control-Allow-Origin":"https://bed-demo-personal-web-server.herokuapp.com"},
+        headers: {"Content-Type": "multipart/form-data"}
       })
       .then(function (response) {
         console.log(response);
@@ -69,14 +70,15 @@ const ContactForm = () => {
     fieldsTem[fieldName] = e.target.value;
     setFieldState({ fields: fieldsTem, error: {} });
   };
-
-  const[httpRes, setHttpRes] = useState([])
+  //fetch data
+  /* const[httpRes, setHttpRes] = useState([])
 
   //componentDidMount
   useEffect(() => {
     // Make a request for a user with a given ID
+    //      .get("https://bed-demo-personal-web-server.herokuapp.com/test1/hari")
     axios
-      .get("https://bed-demo-personal-web-server.herokuapp.com/test1/hari")
+      .get("http://localhost:5000/test1/hari")
       .then(function (response) {
         console.log(response.data);
         setHttpRes(response.data)
@@ -85,12 +87,11 @@ const ContactForm = () => {
         // handle error
         console.log(error);
       });
-  }, []);
+  }, []); */
 
-
+//<div><p>Server response</p>{httpRes.map((el,i)=>{return(<p key = {i}>age: {el.age}, name: {el.name}</p>)})}</div>
   return (
     <div>
-      <div><p>Server response</p>{httpRes.map((el,i)=>{return(<p key = {i}>age: {el.age}, name: {el.name}</p>)})}</div>
       <h1 className="contact-form-headline">Stay in touch</h1>
       <div></div>
       <Form

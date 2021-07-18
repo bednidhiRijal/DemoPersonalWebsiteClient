@@ -1,0 +1,14 @@
+#card-img1{
+    width: 300px;
+    height: 350px;
+}
+.pic-gallery{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: space-evenly;
+}
+.pic-container{
+    flex:100px;
+    margin: 10px;
+}
